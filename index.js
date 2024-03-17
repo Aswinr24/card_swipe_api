@@ -7,12 +7,13 @@ const app = express()
 const PORT = 5050
 
 app.use(cors())
+const responseObject = { message: 'hello' }
 
 // Use __dirname instead of dirname
 const dataFilePath = path.resolve(__dirname, 'data', 'data.json')
 
 app.get('/', (req, res) => {
-  console.log('hello')
+  res.json(responseObject)
 })
 
 app.get('/card/data', (req, res) => {
